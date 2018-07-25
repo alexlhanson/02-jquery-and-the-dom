@@ -1,6 +1,6 @@
 'use strict';
 
-$(document).ready(function(){
+$(document).ready(function () {
   let blogArticles = [];
   console.log(blogArticles);
 
@@ -36,13 +36,16 @@ $(document).ready(function(){
         3. article title,
         4. article body, and
         5. publication date. */
-    $newArticle.find('h1').text(this.title);
+    $newArticle.find('h1').text(this.blogPost.title);
+    $newArticle.find('a').text(this.blogPost.author);
+    $newArticle.find('a').attr(this.blogPost.authorUrl);
+    $newArticle.find('.article-body').html(this.blogPost.body);
     // REVIEW: Display the date as a relative number of 'days ago'
-    $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn)) / 60 / 60 / 24 / 1000) + ' days ago');
+    $newArticle.find('time').html(`about ${parseInt((new Date() - new Date(this.blogPost.publishedOn)) / 60 / 60 / 24 / 1000)} days ago`);
     $newArticle.append('<hr>');
     return $newArticle;
   };
-
+// $newArticle.find('div').html(`By ${this.blogPost.author} published about ${parseInt((new Date() - new Date(this.blogPost.publishedOn)) / 60 / 60 / 24 / 1000)} days ago`);
   rawData.sort(function (a, b) {
     // REVIEW: Take a look at this sort method; This may be the first time we've seen it. Look at the docs and think about how the dates would be sorted if the callback were not included in this method.
     return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
