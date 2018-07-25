@@ -39,6 +39,10 @@ header address a {
   text-align: center;
 }
 
+.template {
+  display: none;
+}
+
 @media screen and (min-width: 640px) {
   .icon-menu {
     display: none;
