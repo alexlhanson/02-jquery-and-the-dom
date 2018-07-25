@@ -51,11 +51,8 @@ $(document).ready(function () {
     return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
   });
 
-  // TODO: Refactor these for loops using the .forEach() array method.
+  // TODO: Refactor these for loops using the .forEach() array method DONE.
 
-  // for (let i = 0; i < rawData.length; i++) {
-  //   blogArticles.push(new Article(rawData[i]));
-  // }
 
   rawData.forEach(function(article){
     blogArticles.push(new Article(article));
