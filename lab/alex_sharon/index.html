@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <title>Lab 2</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="vendor/styles/normalize.css">
-  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="vendor/styles/base.css">
   <link rel="stylesheet" href="vendor/styles/icons.css">
-  <link rel="stylesheet" href="styles/layout.css">
-  <link rel="stylesheet" href="styles/modules.css">
+  <link rel="stylesheet" href="vendor/styles/layout.css">
+  <link rel="stylesheet" href="vendor/styles/modules.css">
   <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
   <header class="clearfix">
@@ -38,7 +40,7 @@
             By <address><a href="">Author Name</a></address>
             published <time pubdate datetime="2000-01-01">Publish Time</time>
             <!-- COMMENT: What is the <time> HTML element used for? How does this connect to our JS files?  -->
-            <!-- PUT YOUR RESPONSE HERE -->
+            <!-- it is used to figure out how long ago the article was written -->
           </div>
         </header>
         <section class="article-body"></section>
@@ -48,7 +50,8 @@
   <footer>
     &copy; 2018 Code Fellows | Static Blog | Happy Ipsum!
   </footer>
-<!-- // TODO: Include any/all needed script tags -->
-
+<!-- // TODO: Include any/all needed script tags DONE-->
+<script src="scripts/blogArticles.js"></script>
+<script src="scripts/article.js"></script>
 </body>
 </html>
