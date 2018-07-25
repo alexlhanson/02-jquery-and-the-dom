@@ -45,7 +45,7 @@ $(document).ready(function () {
     $newArticle.append('<hr>');
     return $newArticle;
   };
-// $newArticle.find('div').html(`By ${this.blogPost.author} published about ${parseInt((new Date() - new Date(this.blogPost.publishedOn)) / 60 / 60 / 24 / 1000)} days ago`);
+  
   rawData.sort(function (a, b) {
     // REVIEW: Take a look at this sort method; This may be the first time we've seen it. Look at the docs and think about how the dates would be sorted if the callback were not included in this method.
     return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
@@ -53,11 +53,15 @@ $(document).ready(function () {
 
   // TODO: Refactor these for loops using the .forEach() array method.
 
-  for (let i = 0; i < rawData.length; i++) {
-    blogArticles.push(new Article(rawData[i]));
-  }
+  // for (let i = 0; i < rawData.length; i++) {
+  //   blogArticles.push(new Article(rawData[i]));
+  // }
 
-  for (let i = 0; i < blogArticles.length; i++) {
-    $('#articles').append(blogArticles[i].toHtml());
-  }
+  rawData.forEach(function(article){
+    blogArticles.push(new Article(article));
+  });
+
+  blogArticles.forEach(function(article){
+    $('#articles').append(article.toHtml());
+  });
 });
